@@ -62,8 +62,7 @@ until [ "$diskexists" = "1" ]; do
 			sgdisk -Z /dev/${diskparts[0]}
 			echo "--> sgdisk -n 1 -t 1:8300 -c 1:"Linux Filesystem" /dev/${diskparts[0]}"
 			sgdisk -n 1 -t 1:8300 -c 1:"Linux Filesystem" /dev/${diskparts[0]}
-			sgdisk -p /dev/${diskparts[0]}
-            #echo "/dev/${diskparts[0]}1"	
+			sgdisk -p /dev/${diskparts[0]}	
 
 			# Create EXT4 Filesystem on Device
             echo "--> mkfs.ext4 -i 8192 -m 0 -O dir_index,extent,flex_bg,large_file,sparse_super,uninit_bg /dev/${diskparts[0]}1"
